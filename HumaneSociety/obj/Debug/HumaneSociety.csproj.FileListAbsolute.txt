@@ -1,0 +1,26 @@
+D:\Documents\DevCodeCamp\HumaneSociety\HumaneSociety\bin\Debug\HumaneSociety.exe.config
+D:\Documents\DevCodeCamp\HumaneSociety\HumaneSociety\bin\Debug\HumaneSociety.exe
+D:\Documents\DevCodeCamp\HumaneSociety\HumaneSociety\bin\Debug\HumaneSociety.pdb
+D:\Documents\DevCodeCamp\HumaneSociety\HumaneSociety\obj\Debug\HumaneSociety.exe
+D:\Documents\DevCodeCamp\HumaneSociety\HumaneSociety\obj\Debug\HumaneSociety.pdb
+D:\Desktop\NEWHUMANESOCEITY\HumaneSociety\HumaneSociety\bin\Debug\HumaneSociety.exe.config
+D:\Desktop\NEWHUMANESOCEITY\HumaneSociety\HumaneSociety\obj\Debug\HumaneSociety.exe
+D:\Desktop\NEWHUMANESOCEITY\HumaneSociety\HumaneSociety\obj\Debug\HumaneSociety.pdb
+D:\Desktop\NEWHUMANESOCEITY\HumaneSociety\HumaneSociety\bin\Debug\HumaneSociety.exe
+D:\Desktop\NEWHUMANESOCEITY\HumaneSociety\HumaneSociety\bin\Debug\HumaneSociety.pdb
+D:\Desktop\NEWHUMANESOCEITY\HumaneSociety\HumaneSociety\obj\Debug\HumaneSociety.csprojResolveAssemblyReference.cache
+D:\Desktop\NEWHUMANESOCEITY\HumaneSocietyShell\HumaneSociety\bin\Debug\HumaneSociety.exe.config
+D:\Desktop\NEWHUMANESOCEITY\HumaneSocietyShell\HumaneSociety\obj\Debug\HumaneSociety.exe
+D:\Desktop\NEWHUMANESOCEITY\HumaneSocietyShell\HumaneSociety\obj\Debug\HumaneSociety.pdb
+C:\Users\Mike and Nano\Desktop\devCodeCamp\Projects\Student_Projects\NEWHUMANESOCEITY\HumaneSocietyShell\HumaneSociety\bin\Debug\HumaneSociety.exe.config
+C:\Users\Mike and Nano\Desktop\devCodeCamp\Projects\Student_Projects\NEWHUMANESOCEITY\HumaneSocietyShell\HumaneSociety\obj\Debug\HumaneSociety.exe
+C:\Users\Mike and Nano\Desktop\devCodeCamp\Projects\Student_Projects\NEWHUMANESOCEITY\HumaneSocietyShell\HumaneSociety\obj\Debug\HumaneSociety.pdb
+C:\Users\Mike and Nano\Desktop\HumaneSocietyStarter\HumaneSociety\bin\Debug\HumaneSociety.exe.config
+C:\Users\Mike and Nano\Desktop\HumaneSocietyStarter\HumaneSociety\obj\Debug\HumaneSociety.exe
+C:\Users\Mike and Nano\Desktop\HumaneSocietyStarter\HumaneSociety\obj\Debug\HumaneSociety.pdb
+C:\Users\Mike and Nano\Desktop\devCodeCamp\Projects\Student_Projects\HumaneSociety\HumaneSocietyStarter\HumaneSociety\bin\Debug\HumaneSociety.exe.config
+C:\Users\Mike and Nano\Desktop\devCodeCamp\Projects\Student_Projects\HumaneSociety\HumaneSocietyStarter\HumaneSociety\obj\Debug\HumaneSociety.exe
+C:\Users\Mike and Nano\Desktop\devCodeCamp\Projects\Student_Projects\HumaneSociety\HumaneSocietyStarter\HumaneSociety\obj\Debug\HumaneSociety.pdb
+C:\Users\Mike and Nano\Desktop\devCodeCamp\Projects\Student_Projects\HumaneSociety\HumaneSocietyStarter\HumaneSociety\obj\Debug\HumaneSociety.csprojResolveAssemblyReference.cache
+C:\Users\MikeySaltine\Documents\devCodeCamp\Projects\Student_Projects\HumaneSociety\HumaneSocietyStarter\HumaneSociety\obj\Debug\HumaneSociety.csprojAssemblyReference.cache
+C:\Users\MikeySaltine\Documents\devCodeCamp\Projects\Student_Projects\HumaneSociety\HumaneSocietyStarter\HumaneSociety\obj\Debug\HumaneSociety.csproj.CoreCompileInputs.cache
