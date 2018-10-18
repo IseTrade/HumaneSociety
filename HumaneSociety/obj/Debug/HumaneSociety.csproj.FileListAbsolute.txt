@@ -24,3 +24,5 @@ C:\Users\Mike and Nano\Desktop\devCodeCamp\Projects\Student_Projects\HumaneSocie
 C:\Users\Mike and Nano\Desktop\devCodeCamp\Projects\Student_Projects\HumaneSociety\HumaneSocietyStarter\HumaneSociety\obj\Debug\HumaneSociety.csprojResolveAssemblyReference.cache
 C:\Users\MikeySaltine\Documents\devCodeCamp\Projects\Student_Projects\HumaneSociety\HumaneSocietyStarter\HumaneSociety\obj\Debug\HumaneSociety.csprojAssemblyReference.cache
 C:\Users\MikeySaltine\Documents\devCodeCamp\Projects\Student_Projects\HumaneSociety\HumaneSocietyStarter\HumaneSociety\obj\Debug\HumaneSociety.csproj.CoreCompileInputs.cache
+C:\Users\Matthew Trau\source\repos\HumaneSociety\HumaneSociety\HumaneSociety\obj\Debug\HumaneSociety.csprojAssemblyReference.cache
+C:\Users\Matthew Trau\source\repos\HumaneSociety\HumaneSociety\HumaneSociety\obj\Debug\HumaneSociety.csproj.CoreCompileInputs.cache

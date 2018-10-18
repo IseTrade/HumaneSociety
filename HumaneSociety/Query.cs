@@ -8,12 +8,13 @@ namespace HumaneSociety
 {
     public class Query
     {
-        HumaneSocietyDataContext db = new HumaneSocietyDataContext();
+        static HumaneSocietyDataContext db = new HumaneSocietyDataContext();
         //var mikes = db.Animals.Where(async => async.Name == "Mike");
 
-        internal static void RunEmployeeQueries()
+        public static void RunEmployeeQueries()
         {
-
+            HumaneSocietyDataContext db = new HumaneSocietyDataContext();
+            
         }
 
         internal static void UpdateAdoption(bool v, Adoption adoption)
@@ -21,9 +22,10 @@ namespace HumaneSociety
             throw new NotImplementedException();
         }
 
-        internal static object SearchForAnimalByMultipleTraits()
+        internal static IQueryable<Animal> SearchForAnimalByMultipleTraits()
         {
-            throw new NotImplementedException();
+            var animalsFound = db.Animals.Select(x => x);
+            return animalsFound;
         }
 
         internal static object GetPendingAdoptions()
@@ -31,19 +33,25 @@ namespace HumaneSociety
             throw new NotImplementedException();
         }
 
-        internal static void UpdateShot(string v, Animal animal)
+        public static void UpdateShot(string v, Animal animal)
         {
-            throw new NotImplementedException();
+            HumaneSocietyDataContext db = new HumaneSocietyDataContext();
+            db.Animals.Where(x => x.AnimalId == animal.AnimalId).Select(x => x.AnimalId);
+            db.SubmitChanges();
         }
 
-        internal static object GetShots(Animal animal)
+        public static IQueryable<Shot> GetShots(Animal animal)
         {
-            throw new NotImplementedException();
+            HumaneSocietyDataContext db = new HumaneSocietyDataContext();
+            var shot = db.Shots.Select(x => x);
+            return shot;
         }
 
-        internal static Client GetClient(string userName, string password)
+        public static Client GetClient(string userName, string password)
         {
-            throw new NotImplementedException();
+     
+            var client = db.Clients.Where(x => x.UserName == userName && x.Password == password).SingleOrDefault();
+            return client;
         }
 
         internal static void EnterUpdate(Animal animal, Dictionary<int, string> updates)
@@ -51,24 +59,32 @@ namespace HumaneSociety
             throw new NotImplementedException();
         }
 
-        internal static void RemoveAnimal(object animal)
+        public static void RemoveAnimal(Animal animal)
         {
-            throw new NotImplementedException();
+            HumaneSocietyDataContext db = new HumaneSocietyDataContext();
+            db.Animals.DeleteOnSubmit(animal);
+            db.SubmitChanges();
         }
 
-        internal static object GetSpecies()
+        public static IQueryable<Specy> GetSpecies()
         {
-            throw new NotImplementedException();
+            HumaneSocietyDataContext db = new HumaneSocietyDataContext();
+            var species = db.Species.Select(x => x);
+            return species;
         }
 
-        internal static DietPlan GetDietPlan()
+        public static IQueryable<DietPlan> GetDietPlan()
         {
-            throw new NotImplementedException();
+            HumaneSocietyDataContext db = new HumaneSocietyDataContext();
+            var dietPlan = db.DietPlans.Select(x => x);
+            return dietPlan;
         }
 
-        internal static void AddAnimal(Animal animal)
+        public static void AddAnimal(Animal animal)
         {
-            throw new NotImplementedException();
+            HumaneSocietyDataContext db = new HumaneSocietyDataContext();
+            db.Animals.InsertOnSubmit(animal);
+            db.SubmitChanges();
         }
 
         internal static Employee EmployeeLogin(string userName, string password)
@@ -101,12 +117,20 @@ namespace HumaneSociety
             throw new NotImplementedException();
         }
 
-        internal static object GetUserAdoptionStatus(Client client)
+        internal static List<Adoption> GetUserAdoptionStatus(Client client)
         {
-            throw new NotImplementedException();
+            var clientAdoptingStatus = db.Adoptions.Where(x => x.ClientId == client.ClientId).ToList();
+            return clientAdoptingStatus;
         }
 
-        internal static object RetrieveClients()
+        public static IQueryable<Client> RetrieveClients()
+        {
+            HumaneSocietyDataContext db = new HumaneSocietyDataContext();
+            var clients = db.Clients.Select(x => x);
+            return clients;
+        }
+
+        internal static Room GetRoom(int animalId)
         {
             throw new NotImplementedException();
         }
@@ -133,7 +157,11 @@ namespace HumaneSociety
 
         internal static void UpdateFirstName(Client client)
         {
-            throw new NotImplementedException();
+            
+            //var firstNameUpdate = (from Client in db.Clients where client.ClientId == client.ClientId select client).First();
+            var firstNameUpdate = db.Clients.Where(x => x.ClientId == client.ClientId).SingleOrDefault();
+            firstNameUpdate.FirstName = client.FirstName;
+            db.SubmitChanges();
         }
 
         internal static void UpdateLastName(Client client)
@@ -141,17 +169,20 @@ namespace HumaneSociety
             throw new NotImplementedException();
         }
 
-        internal static object GetStates()
+        public static IQueryable<USState> GetStates()
         {
-            throw new NotImplementedException();
+            HumaneSocietyDataContext db = new HumaneSocietyDataContext();
+            var state = db.USStates.Select(x => x);
+            return state;
         }
 
-        internal static object GetAnimalByID(int iD)
+        public static Animal GetAnimalByID(int iD)
         {
-            throw new NotImplementedException();
+            var animal = db.Animals.Where(x => x.AnimalId == iD).SingleOrDefault();
+            return animal;
         }
 
-        internal static void Adopt(object animal, Client client)
+        public static void Adopt(Animal animal, Client client)
         {
             throw new NotImplementedException();
         }
