@@ -148,7 +148,7 @@ namespace HumaneSociety
                 //case 3:
                 //    CheckShots(animal);
                 //    Console.Clear();
-                    return;
+                //    return;
                 default:
                     UserInterface.DisplayUserOptions("Input not accepted please select a menu choice");
                     return;

@@ -42,7 +42,7 @@ namespace HumaneSociety
 
         public static IQueryable<Shot> GetShots(Animal animal)
         {
-            var shot = db.Shots.Select(x => x);
+            var shot = db.Shots.Where(x => x.AnimalShots == animal.AnimalShots);
             return shot;
         }
 
@@ -84,12 +84,14 @@ namespace HumaneSociety
 
         internal static Employee EmployeeLogin(string userName, string password)
         {
-            throw new NotImplementedException();
+            var Employee = db.Employees.Where(x => x.UserName == userName && x.Password == password);
+            return Employee.SingleOrDefault();
         }
 
         internal static Employee RetrieveEmployeeUser(string email, int employeeNumber)
         {
-            throw new NotImplementedException();
+            var Employee = db.Employees.Where(e => e.Email == email && e.EmployeeNumber == employeeNumber);
+            return Employee.SingleOrDefault();
         }
 
         internal static void AddUsernameAndPassword(Employee employee)
@@ -109,7 +111,22 @@ namespace HumaneSociety
 
         internal static void AddNewClient(string firstName, string lastName, string username, string password, string email, string streetAddress, int zipCode, int state)
         {
-            throw new NotImplementedException();
+            Address address = new Address();
+            address.AddressLine1 = streetAddress;
+            address.Zipcode = zipCode;
+            address.USStateId = state;
+            db.Addresses.InsertOnSubmit(address);
+            db.SubmitChanges();
+
+            Client client = new Client();
+            client.FirstName = firstName;
+            client.LastName = lastName;
+            client.UserName = username;
+            client.Password = password;
+            client.Email = email;
+            client.AddressId = address.AddressId;
+            db.Clients.InsertOnSubmit(client);
+            db.SubmitChanges();
         }
 
         internal static List<Adoption> GetUserAdoptionStatus(Client client)
@@ -126,27 +143,33 @@ namespace HumaneSociety
 
         internal static Room GetRoom(int animalId)
         {
-            throw new NotImplementedException();
+            return db.Rooms.Where(r => r.AnimalId == animalId).SingleOrDefault();
         }
 
         internal static void UpdateClient(Client client)
         {
-            throw new NotImplementedException();
+            db.SubmitChanges();
         }
 
         internal static void UpdateUsername(Client client)
         {
-            throw new NotImplementedException();
+            var userNameUpdate = db.Clients.Where(x => x.ClientId == client.ClientId).SingleOrDefault();
+            userNameUpdate.UserName = client.UserName;
+            db.SubmitChanges();
         }
 
         internal static void UpdateEmail(Client client)
         {
-            throw new NotImplementedException();
+            var emailUpdate = db.Clients.Where(x => x.ClientId == client.ClientId).SingleOrDefault();
+            emailUpdate.Email = client.Email;
+            db.SubmitChanges();
         }
 
         internal static void UpdateAddress(Client client)
         {
-            throw new NotImplementedException();
+            var addressUpdate = db.Clients.Where(x => x.ClientId == client.ClientId).SingleOrDefault();
+            addressUpdate.Address = client.Address;
+            db.SubmitChanges();
         }
 
         internal static void UpdateFirstName(Client client)
@@ -158,7 +181,9 @@ namespace HumaneSociety
 
         internal static void UpdateLastName(Client client)
         {
-            throw new NotImplementedException();
+            var lastNameUpdate = db.Clients.Where(x => x.ClientId == client.ClientId).SingleOrDefault();
+            lastNameUpdate.LastName = client.LastName;
+            db.SubmitChanges();
         }
 
         public static IQueryable<USState> GetStates()
