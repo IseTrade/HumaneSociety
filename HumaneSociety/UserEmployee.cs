@@ -159,14 +159,14 @@ namespace HumaneSociety
         //{
         //    List<string> shotInfo = new List<string>();
         //    var shots = Query.GetShots(animal);
-        //    foreach(AnimalShot shot in shots.ToList())
+        //    foreach (AnimalShot shot in shots.ToList())
         //    {
         //        shotInfo.Add($"{shot.Shot.Name} Date: {shot.DateReceived}");
         //    }
-        //    if(shotInfo.Count > 0)
+        //    if (shotInfo.Count > 0)
         //    {
         //        UserInterface.DisplayUserOptions(shotInfo);
-        //        if(UserInterface.GetBitData("Would you like to Update shots?"))
+        //        if (UserInterface.GetBitData("Would you like to Update shots?"))
         //        {
         //            Query.UpdateShot("booster", animal);
         //        }
@@ -178,7 +178,7 @@ namespace HumaneSociety
         //            Query.UpdateShot("booster", animal);
         //        }
         //    }
-            
+
         //}
 
         private void UpdateAnimal(Animal animal)
