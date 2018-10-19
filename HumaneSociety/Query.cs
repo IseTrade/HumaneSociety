@@ -28,21 +28,20 @@ namespace HumaneSociety
             return animalsFound;
         }
 
-        internal static object GetPendingAdoptions()
+        public static IQueryable<Adoption> GetPendingAdoptions()
         {
-            throw new NotImplementedException();
+            //var adpotionStatus = db.Adoptions.Where(x => x);
+            return db.Adoptions;
         }
 
         public static void UpdateShot(string v, Animal animal)
         {
-            HumaneSocietyDataContext db = new HumaneSocietyDataContext();
-            db.Animals.Where(x => x.AnimalId == animal.AnimalId).Select(x => x.AnimalId);
+            db.Animals.Where(x => x.AnimalId == animal.AnimalId).SingleOrDefault();
             db.SubmitChanges();
         }
 
         public static IQueryable<Shot> GetShots(Animal animal)
         {
-            HumaneSocietyDataContext db = new HumaneSocietyDataContext();
             var shot = db.Shots.Select(x => x);
             return shot;
         }
@@ -58,31 +57,27 @@ namespace HumaneSociety
         {
             throw new NotImplementedException();
         }
-
+        
         public static void RemoveAnimal(Animal animal)
         {
-            HumaneSocietyDataContext db = new HumaneSocietyDataContext();
             db.Animals.DeleteOnSubmit(animal);
             db.SubmitChanges();
         }
 
-        public static IQueryable<Specy> GetSpecies()
+        public static int? GetSpecies(string userInput)
         {
-            HumaneSocietyDataContext db = new HumaneSocietyDataContext();
-            var species = db.Species.Select(x => x);
-            return species;
+            var species = db.Species.Where(s => s.Name == userInput).SingleOrDefault();
+            return species.SpeciesId;
         }
 
-        public static IQueryable<DietPlan> GetDietPlan()
+        public static int? GetDietPlan(string userInput2)
         {
-            HumaneSocietyDataContext db = new HumaneSocietyDataContext();
-            var dietPlan = db.DietPlans.Select(x => x);
-            return dietPlan;
+            var dietPlan = db.DietPlans.Where(d => d.Name == userInput2).SingleOrDefault();
+            return dietPlan.DietPlanId;
         }
 
         public static void AddAnimal(Animal animal)
         {
-            HumaneSocietyDataContext db = new HumaneSocietyDataContext();
             db.Animals.InsertOnSubmit(animal);
             db.SubmitChanges();
         }
@@ -125,7 +120,6 @@ namespace HumaneSociety
 
         public static IQueryable<Client> RetrieveClients()
         {
-            HumaneSocietyDataContext db = new HumaneSocietyDataContext();
             var clients = db.Clients.Select(x => x);
             return clients;
         }
@@ -135,7 +129,7 @@ namespace HumaneSociety
             throw new NotImplementedException();
         }
 
-        internal static void updateClient(Client client)
+        internal static void UpdateClient(Client client)
         {
             throw new NotImplementedException();
         }
@@ -157,8 +151,6 @@ namespace HumaneSociety
 
         internal static void UpdateFirstName(Client client)
         {
-            
-            //var firstNameUpdate = (from Client in db.Clients where client.ClientId == client.ClientId select client).First();
             var firstNameUpdate = db.Clients.Where(x => x.ClientId == client.ClientId).SingleOrDefault();
             firstNameUpdate.FirstName = client.FirstName;
             db.SubmitChanges();
@@ -171,7 +163,6 @@ namespace HumaneSociety
 
         public static IQueryable<USState> GetStates()
         {
-            HumaneSocietyDataContext db = new HumaneSocietyDataContext();
             var state = db.USStates.Select(x => x);
             return state;
         }

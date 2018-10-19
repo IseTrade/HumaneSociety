@@ -68,7 +68,7 @@ namespace HumaneSociety
             {
                 foreach(Adoption adoption in adoptions)
                 {
-                    adoptionInfo.Add($"{counter}. {adoption.Client.FirstName} {adoption.Client.LastName}, {adoption.Animal.Name} {adoption.Animal.Species}");
+                    adoptionInfo.Add($"{counter}. {adoption.Client.FirstName} {adoption.Client.LastName}, {adoption.Animal.Name} {adoption.Animal.Specy}");
                     counter++;
                 }
                 UserInterface.DisplayUserOptions(adoptionInfo);
@@ -120,7 +120,7 @@ namespace HumaneSociety
             bool isFinished = false;
             Console.Clear();
             while(!isFinished){
-                List<string> options = new List<string>() { "Animal found:", animal.Name, animal.Species.Name, "Would you like to:", "1. Get Info", "2. Update Info", "3. Check shots", "4. Return" };
+                List<string> options = new List<string>() { "Animal found:", animal.Name, animal.Specy.Name, "Would you like to:", "1. Get Info", "2. Update Info", "3. Check shots", "4. Return" };
                 UserInterface.DisplayUserOptions(options);
                 int input = UserInterface.GetIntegerData();
                 if (input == 4)
@@ -145,9 +145,9 @@ namespace HumaneSociety
                     UpdateAnimal(animal);
                     Console.Clear();
                     return;
-                case 3:
-                    CheckShots(animal);
-                    Console.Clear();
+                //case 3:
+                //    CheckShots(animal);
+                //    Console.Clear();
                     return;
                 default:
                     UserInterface.DisplayUserOptions("Input not accepted please select a menu choice");
@@ -155,31 +155,31 @@ namespace HumaneSociety
             }
         }
 
-        private void CheckShots(Animal animal)
-        {
-            List<string> shotInfo = new List<string>();
-            var shots = Query.GetShots(animal);
-            foreach(AnimalShot shot in shots.ToList())
-            {
-                shotInfo.Add($"{shot.Shot.Name} Date: {shot.DateReceived}");
-            }
-            if(shotInfo.Count > 0)
-            {
-                UserInterface.DisplayUserOptions(shotInfo);
-                if(UserInterface.GetBitData("Would you like to Update shots?"))
-                {
-                    Query.UpdateShot("booster", animal);
-                }
-            }
-            else
-            {
-                if (UserInterface.GetBitData("Would you like to Update shots?"))
-                {
-                    Query.UpdateShot("booster", animal);
-                }
-            }
+        //private void CheckShots(Animal animal)
+        //{
+        //    List<string> shotInfo = new List<string>();
+        //    var shots = Query.GetShots(animal);
+        //    foreach(AnimalShot shot in shots.ToList())
+        //    {
+        //        shotInfo.Add($"{shot.Shot.Name} Date: {shot.DateReceived}");
+        //    }
+        //    if(shotInfo.Count > 0)
+        //    {
+        //        UserInterface.DisplayUserOptions(shotInfo);
+        //        if(UserInterface.GetBitData("Would you like to Update shots?"))
+        //        {
+        //            Query.UpdateShot("booster", animal);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        if (UserInterface.GetBitData("Would you like to Update shots?"))
+        //        {
+        //            Query.UpdateShot("booster", animal);
+        //        }
+        //    }
             
-        }
+        //}
 
         private void UpdateAnimal(Animal animal)
         {
@@ -233,7 +233,7 @@ namespace HumaneSociety
                 return;
             }
             var animal = animals[0];
-            List<string> options = new List<string>() { "Animal found:", animal.Name, animal.Species.Name, "would you like to delete?" };
+            List<string> options = new List<string>() { "Animal found:", animal.Name, animal.Specy.Name, "would you like to delete?" };
             if ((bool)UserInterface.GetBitData(options))
             {
                 Query.RemoveAnimal(animal);
@@ -243,14 +243,18 @@ namespace HumaneSociety
         {
             Console.Clear();
             Animal animal = new Animal();
-            animal.Species = Query.GetSpecies();
+            Console.WriteLine("what is the specy");
+            string userinput = Console.ReadLine();
+            animal.SpeciesId = Query.GetSpecies(userinput);
             animal.Name = UserInterface.GetStringData("name", "the animal's");
             animal.Age = UserInterface.GetIntegerData("age", "the animal's");
             animal.Demeanor = UserInterface.GetStringData("demeanor", "the animal's");
             animal.KidFriendly = UserInterface.GetBitData("the animal", "child friendly");
             animal.PetFriendly = UserInterface.GetBitData("the animal", "pet friendly");
             animal.Weight = UserInterface.GetIntegerData("the animal", "the weight of the");
-            animal.DietPlan= Query.GetDietPlan();
+            Console.WriteLine("what type of diet?");
+            string userInput2 = Console.ReadLine();
+            animal.DietPlanId = Query.GetDietPlan(userInput2);
             Query.AddAnimal(animal);
         }
         protected override void LogInPreExistingUser()

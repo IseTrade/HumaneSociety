@@ -365,15 +365,15 @@ namespace HumaneSociety
             {
                 case "small":
                     client.HomeSquareFootage= 1;
-                    Query.updateClient(client);
+                    Query.UpdateClient(client);
                     break;
                 case "medium":
                     client.HomeSquareFootage = 2;
-                    Query.updateClient(client);
+                    Query.UpdateClient(client);
                     break;
                 case "large":
                     client.HomeSquareFootage = 3;
-                    Query.updateClient(client);
+                    Query.UpdateClient(client);
                     break;
                 default:
                     UserInterface.DisplayUserOptions("Incorrect Input type please enter small, medium, or large");
@@ -387,14 +387,14 @@ namespace HumaneSociety
             Console.Clear();
             UserInterface.DisplayUserOptions("How many childern are in your household?");
             client.NumberOfKids = UserInterface.GetIntegerData();
-            Query.updateClient(client);
+            Query.UpdateClient(client);
         }
 
         private void UpdateIncome()
         {
             UserInterface.DisplayUserOptions("What is your household income? (If you would like to omit it enter 0)");
             client.Income = UserInterface.GetIntegerData();
-            Query.updateClient(client);
+            Query.UpdateClient(client);
         }
 
         private void UpdatePassword()
@@ -403,7 +403,7 @@ namespace HumaneSociety
             Console.Clear();
             UserInterface.DisplayUserOptions("Current Password: " + client.Password + " What is your new Password?");
             client.Password = UserInterface.GetUserInput();
-            Query.updateClient(client);
+            Query.UpdateClient(client);
         }
 
         private void UpdateUsername()
