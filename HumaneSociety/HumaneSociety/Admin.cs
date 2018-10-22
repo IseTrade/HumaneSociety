@@ -8,10 +8,6 @@ namespace HumaneSociety
 {
     class Admin : User
     {
-
-
-
-
         public override void LogIn()
         {
             UserInterface.DisplayUserOptions("What is your password?");
@@ -36,17 +32,17 @@ namespace HumaneSociety
         }
         protected void RunInput(string input)
         {
-            if(input == "1" || input.ToLower() == "create")
+            if (input == "1" || input.ToLower() == "create")
             {
                 AddEmployee();
                 RunUserMenus();
             }
-            else if(input == "2" || input.ToLower() == "delete")
+            else if (input == "2" || input.ToLower() == "delete")
             {
                 RemoveEmployee();
                 RunUserMenus();
             }
-            else if(input == "3" || input.ToLower() == "read")
+            else if (input == "3" || input.ToLower() == "read")
             {
                 ReadEmployee();
                 RunUserMenus();
@@ -66,8 +62,10 @@ namespace HumaneSociety
         private void UpdateEmployee()
         {
             Employee employee = new Employee();
+
             //Update record based on employee number
             employee.EmployeeNumber = int.Parse(UserInterface.GetStringData("employee number", "the employee's"));
+
             employee.FirstName = UserInterface.GetStringData("first name", "the employee's");
             employee.LastName = UserInterface.GetStringData("last name", "the employee's");
             employee.UserName = UserInterface.GetStringData("User name", "the employee's");
@@ -91,7 +89,10 @@ namespace HumaneSociety
             try
             {
                 Employee employee = new Employee();
+
+                //Read record based on employee number
                 employee.EmployeeNumber = int.Parse(UserInterface.GetStringData("employee number", "the employee's"));
+
                 Query.RunEmployeeQueries(employee, "read");
             }
             catch
@@ -102,22 +103,24 @@ namespace HumaneSociety
             }
         }
 
-        private void RemoveEmployee()
+        private void RemoveEmployee() //method name
         {
             Employee employee = new Employee();
-            employee.LastName = UserInterface.GetStringData("last name", "the employee's"); ;
+            //Useless employee.LastName = UserInterface.GetStringData("last name", "the employee's"); //Used to indicate which record was deleted
+
+            //Delete record based on employee number
             employee.EmployeeNumber = int.Parse(UserInterface.GetStringData("employee number", "the employee's"));
             try
             {
                 Console.Clear();
                 Query.RunEmployeeQueries(employee, "delete");
-                UserInterface.DisplayUserOptions("Employee successfully removed");
+                UserInterface.DisplayUserOptions("Employee was successfully removed");
+                RemoveEmployee();
             }
             catch
             {
                 Console.Clear();
                 UserInterface.DisplayUserOptions("Employee removal unsuccessful please try again or type exit");
-                RemoveEmployee();
             }
         }
 

@@ -31,10 +31,3 @@ C:\Users\Matthew Trau\source\repos\HumaneSociety\HumaneSociety\HumaneSociety\bin
 C:\Users\Matthew Trau\source\repos\HumaneSociety\HumaneSociety\HumaneSociety\bin\Debug\HumaneSociety.pdb
 C:\Users\Matthew Trau\source\repos\HumaneSociety\HumaneSociety\HumaneSociety\obj\Debug\HumaneSociety.exe
 C:\Users\Matthew Trau\source\repos\HumaneSociety\HumaneSociety\HumaneSociety\obj\Debug\HumaneSociety.pdb
-C:\Users\Matthew Trau\Desktop\backup\HumaneSociety\HumaneSociety\bin\Debug\HumaneSociety.exe.config
-C:\Users\Matthew Trau\Desktop\backup\HumaneSociety\HumaneSociety\bin\Debug\HumaneSociety.exe
-C:\Users\Matthew Trau\Desktop\backup\HumaneSociety\HumaneSociety\bin\Debug\HumaneSociety.pdb
-C:\Users\Matthew Trau\Desktop\backup\HumaneSociety\HumaneSociety\obj\Debug\HumaneSociety.csprojAssemblyReference.cache
-C:\Users\Matthew Trau\Desktop\backup\HumaneSociety\HumaneSociety\obj\Debug\HumaneSociety.csproj.CoreCompileInputs.cache
-C:\Users\Matthew Trau\Desktop\backup\HumaneSociety\HumaneSociety\obj\Debug\HumaneSociety.exe
-C:\Users\Matthew Trau\Desktop\backup\HumaneSociety\HumaneSociety\obj\Debug\HumaneSociety.pdb
