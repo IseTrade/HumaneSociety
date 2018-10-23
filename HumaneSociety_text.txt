@@ -1,0 +1,34 @@
+INSERT INTO Species Values('Canine');
+INSERT INTO Species Values('Felines');
+INSERT INTO Species Values('Birds');
+INSERT INTO Species Values('Rabbits');
+INSERT INTO Species Values('Ferrets');
+
+INSERT INTO Animals Values('Spot', 1, 25, 5, 1, 'Mean', 0, 0, 'Male', 'Not Adopted', null)
+INSERT INTO Animals Values('Felina', 2, 12, 7, 4, 'Mellow', 1, 1, 'Female', 'Not Adopted', null)
+INSERT INTO Animals Values('Hoppy', 3, 4, 1, 6, 'Mellow', 0, 1, 'Female', 'Adopted', null)
+INSERT INTO Animals Values('Wacky', 4, 1, 1, 8, 'Shy', 0, 1, 'Male', 'Adopted', null)
+INSERT INTO Animals Values('Furry', 5, 2, 1, 5, 'Crazy', 0, 0, 'Male', 'Not Adopted', null)
+
+INSERT INTO Rooms Values(1, null)
+INSERT INTO Rooms Values(2, null)
+INSERT INTO Rooms Values(3, null)
+INSERT INTO Rooms Values(4, null)
+INSERT INTO Rooms Values(5, null)
+INSERT INTO Rooms Values(6, null)
+INSERT INTO Rooms Values(7, null)
+INSERT INTO Rooms Values(8, null)
+INSERT INTO Rooms Values(9, null)
+INSERT INTO Rooms Values(10, null)
+
+INSERT INTO DietPlan Values('Heavy Eater', 10)
+INSERT INTO DietPlan Values('Medium Eater', 5)
+INSERT INTO DietPlan Values('Light Eater', 3)
+INSERT INTO DietPlan Values('Vegetarian', 6)
+INSERT INTO DietPlan Values('Very Light Eater', 1)
+
+INSERT INTO Shots Values('Rabies')
+INSERT INTO Shots Values('Distemper')
+INSERT INTO Shots Values('Bordetella')
+INSERT INTO Shots Values('Heart Worm')
+INSERT INTO Shots Values('Lyme')
