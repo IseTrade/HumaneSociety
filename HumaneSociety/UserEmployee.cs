@@ -150,41 +150,41 @@ namespace HumaneSociety
                     UpdateAnimal(animal);
                     Console.Clear();
                     return;
-                //case 3:
-                //    CheckShots(animal);
-                //    Console.Clear();
-                //    return;
+                case 3:
+                    CheckShots(animal);
+                    Console.Clear();
+                    return;
                 default:
                     UserInterface.DisplayUserOptions("Input not accepted please select a menu choice");
                     return;
             }
         }
 
-        //private void CheckShots(Animal animal)
-        //{
-        //    List<string> shotInfo = new List<string>();
-        //    var shots = Query.GetShots(animal);
-        //    foreach (AnimalShot shot in shots.ToList())
-        //    {
-        //        shotInfo.Add($"{shot.Shot.Name} Date: {shot.DateReceived}");
-        //    }
-        //    if (shotInfo.Count > 0)
-        //    {
-        //        UserInterface.DisplayUserOptions(shotInfo);
-        //        if (UserInterface.GetBitData("Would you like to Update shots?"))
-        //        {
-        //            Query.UpdateShot("booster", animal);
-        //        }
-        //    }
-        //    else
-        //    {
-        //        if (UserInterface.GetBitData("Would you like to Update shots?"))
-        //        {
-        //            Query.UpdateShot("booster", animal);
-        //        }
-        //    }
+        private void CheckShots(Animal animal)
+        {
+            List<string> shotInfo = new List<string>();
+            var shots = Query.GetShots(animal);
+            foreach (AnimalShot shot in shots.ToList())
+            {
+                shotInfo.Add($"{shot.Shot.Name} Date: {shot.DateReceived}");
+            }
+            if (shotInfo.Count > 0)
+            {
+                UserInterface.DisplayUserOptions(shotInfo);
+                if (UserInterface.GetBitData("Would you like to Update shots?"))
+                {
+                    Query.UpdateShot("booster", animal);
+                }
+            }
+            else
+            {
+                if (UserInterface.GetBitData("Would you like to Update shots?"))
+                {
+                    Query.UpdateShot("booster", animal);
+                }
+            }
 
-        //}
+        }
 
         private void UpdateAnimal(Animal animal, Dictionary<int, string> updates = null)
         {

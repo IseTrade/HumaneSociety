@@ -150,14 +150,26 @@ namespace HumaneSociety
 
         public static void UpdateShot(string v, Animal animal)
         {
-            db.Animals.Where(x => x.AnimalId == animal.AnimalId).SingleOrDefault();
-            db.SubmitChanges();
-        }
-        //=====================================================================================================
+            AnimalShot animalShot = new AnimalShot();
+            animalShot.AnimalId = animal.AnimalId;
+            animalShot.ShotId = db.Shots.Where(x => x.Name == v).Single().ShotId;
+            animalShot.DateReceived = DateTime.Now;
 
-        public static IQueryable<Shot> GetShots(Animal animal)
+            db.AnimalShots.InsertOnSubmit(animalShot);
+            db.SubmitChanges();
+
+
+
+
+
+            //db.Animals.Where(x => x.AnimalId == animal.AnimalId).Single();
+            //db.SubmitChanges();
+        }
+        //=====================================================================================================//
+
+        public static IQueryable<AnimalShot> GetShots(Animal animal)
         {
-            var shot = db.Shots.Where(x => x.AnimalShots == animal.AnimalShots);
+            var shot = db.AnimalShots.Where(x => x.AnimalId == animal.AnimalId);
             return shot;
         }
         //=====================================================================================================
@@ -244,6 +256,7 @@ namespace HumaneSociety
 
         public static void AddAnimal(Animal animal)
         {
+
             db.Animals.InsertOnSubmit(animal);
             db.SubmitChanges();
         }
